@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" font-family="Inter, 'DejaVu Sans', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="380" rx="24" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="40" y="110" width="180" height="130" rx="18" fill="#10294a"/>
+  <text x="130.0" y="163" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">Jabra</text>
+  <text x="130.0" y="196" text-anchor="middle" font-size="20" fill="#a5e8f2">headset or</text>
+  <text x="130.0" y="222" text-anchor="middle" font-size="20" fill="#a5e8f2">Link dongle</text>
+  <rect x="333" y="110" width="180" height="130" rx="18" fill="#0e5f78"/>
+  <text x="423.0" y="163" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">jabridge</text>
+  <text x="423.0" y="196" text-anchor="middle" font-size="20" fill="#d5f3f8">community</text>
+  <text x="423.0" y="222" text-anchor="middle" font-size="20" fill="#d5f3f8">device service</text>
+  <rect x="626" y="110" width="180" height="130" rx="18" fill="#0d9488"/>
+  <text x="716.0" y="163" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">jabra2mqtt</text>
+  <text x="716.0" y="196" text-anchor="middle" font-size="20" fill="#ccfbf1">this project</text>
+  <text x="716.0" y="222" text-anchor="middle" font-size="20" fill="#ccfbf1">add-on or Docker</text>
+  <rect x="919" y="110" width="241" height="130" rx="18" fill="#1d4ed8"/>
+  <text x="1039.5" y="163" text-anchor="middle" font-size="25" font-weight="700" fill="#ffffff">Home Assistant</text>
+  <text x="1039.5" y="196" text-anchor="middle" font-size="20" fill="#dbeafe">sensors, selects,</text>
+  <text x="1039.5" y="222" text-anchor="middle" font-size="20" fill="#dbeafe">automations</text>
+  <g stroke="#475569" stroke-width="3" marker-end="url(#arrow)" marker-start="url(#arrow)">
+    <line x1="228" y1="175" x2="325" y2="175"/>
+    <line x1="521" y1="175" x2="618" y2="175"/>
+    <line x1="814" y1="175" x2="911" y2="175"/>
+  </g>
+  <g text-anchor="middle" fill="#334155">
+    <text x="276.5" y="150" font-size="18">USB HID</text>
+    <text x="569.5" y="150" font-size="18">JSON-RPC</text>
+    <text x="569.5" y="131" font-size="15" fill="#64748b">Unix socket</text>
+    <text x="862.5" y="150" font-size="18">MQTT</text>
+    <text x="862.5" y="131" font-size="15" fill="#64748b">discovery</text>
+  </g>
+  <g font-size="19" fill="#334155">
+    <text x="40" y="300">Runs on a Linux host that has the USB connection to the headset or dongle.</text>
+    <text x="40" y="330">Writes are limited to settings jabridge marks editable. No firmware flashing, no resets.</text>
+  </g>
+</svg>

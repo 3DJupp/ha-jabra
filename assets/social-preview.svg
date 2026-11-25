@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1d36"/>
+      <stop offset="1" stop-color="#0e5f78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <g transform="translate(120 150) scale(1.4)">
+    <rect width="256" height="256" rx="56" fill="#ffffff" fill-opacity="0.08"/>
+    <path d="M62 150 C62 56 194 56 194 150" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <rect x="42" y="136" width="36" height="66" rx="15" fill="#ffffff"/>
+    <rect x="178" y="136" width="36" height="66" rx="15" fill="#ffffff"/>
+    <path d="M97 142 L128 112 L159 142 V182 Q159 188 153 188 H103 Q97 188 97 182 Z" fill="#2dd4bf"/>
+    <rect x="118" y="156" width="20" height="32" rx="4" fill="#0b1d36"/>
+    <circle cx="196" cy="128" r="9" fill="#ff5a4f" stroke="#ffffff" stroke-width="3"/>
+    <path d="M60 202 C60 228 90 236 112 228" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="117" cy="227" r="9" fill="#ffffff"/>
+  </g>
+  <text x="520" y="290" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="800" font-size="130" fill="#ffffff">ha-jabra</text>
+  <text x="524" y="365" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="500" font-size="42" fill="#a5e8f2">Jabra headsets in Home Assistant</text>
+  <text x="524" y="420" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="400" font-size="32" fill="#7fb6c4">Battery, busylight and settings via MQTT discovery</text>
+</svg>

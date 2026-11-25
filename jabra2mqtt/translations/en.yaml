@@ -1,0 +1,25 @@
+configuration:
+  allow_writes:
+    name: Allow changes
+    description: Let Home Assistant change busylight and headset settings. Turn off for read-only mode.
+  busylight_allow_auto:
+    name: Offer busylight mode "auto"
+    description: "Auto follows call detection through PipeWire, which does not exist inside the add-on. Leave off unless you point socket_path at a jabridge that has PipeWire."
+  poll_interval:
+    name: Poll interval (seconds)
+    description: How often battery and connection are read when no event arrives.
+  settings_interval:
+    name: Settings refresh (seconds)
+    description: How often the headset settings are read again. Must not be smaller than the poll interval.
+  base_topic:
+    name: MQTT base topic
+    description: Prefix for state and command topics.
+  device_serial:
+    name: Device serial (optional)
+    description: Only manage the device with this serial number.
+  socket_path:
+    name: External jabridge socket (optional)
+    description: Path to a jabridge socket you mounted into the add-on. Leave empty to run the bundled jabridge.
+  log_level:
+    name: Log level
+    description: Verbosity of the add-on log.

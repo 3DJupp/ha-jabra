@@ -1,0 +1,18 @@
+# Standalone use without Home Assistant OS: run next to any MQTT broker.
+# The container needs access to the headset's /dev/hidrawN nodes.
+services:
+  jabra2mqtt:
+    image: ghcr.io/3djupp/ha-jabra-amd64:latest   # use ...-aarch64 on ARM
+    restart: unless-stopped
+    # Replace with the hidraw nodes of your headset or dongle (see `ls -l /dev/hidraw*`).
+    devices:
+      - /dev/hidraw0:/dev/hidraw0
+    volumes:
+      - /sys:/sys:ro
+    environment:
+      JABRA2MQTT_MQTT_HOST: 192.168.1.10
+      JABRA2MQTT_MQTT_PORT: "1883"
+      JABRA2MQTT_MQTT_USERNAME: jabra
+      JABRA2MQTT_MQTT_PASSWORD: change-me
+      JABRA2MQTT_ALLOW_WRITES: "true"
+      JABRA2MQTT_LOG_LEVEL: INFO
