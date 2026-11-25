@@ -9,7 +9,6 @@ arch:
   - aarch64
 init: false
 startup: services
-boot: auto
 services:
   - mqtt:need
 # jabridge talks to the headset through /dev/hidrawN and /sys/class/hidraw.

@@ -51,7 +51,15 @@ Not found: any PIN or passkey property. Firmware update properties exist but sta
   UUIDs `00001107-D102-11E1-9B23-00025B00A5A5`, `00670067-D102-11E1-9B23-00025B00A5A5`).
   Which one the Evolve2 85 uses is open.
 
-### Next check (live, no reverse engineering)
+### nRF Connect result (Evolve2 85, 25.11.2026)
+
+Connected over BLE without bonding. Primary services: Generic Access `0x1800`, Generic Attribute
+`0x1801`, Device Information `0x180A`, Battery `0x180F` and `0xFEFF`. `0xFEFF` is the 16-bit member
+UUID assigned to GN Netcom (Jabra), so it is the candidate for GNP over BLE. Battery level is
+available through the standard Battery Service. Still to record: the characteristics of `0xFEFF`
+and their properties, and whether writes need bonding.
+
+### Earlier plan for the live check
 
 With nRF Connect on a phone (Sound+ closed): connect to the Evolve2 85 and record all GATT services
 and characteristics with their properties (read, write, notify). A vendor service with a
