@@ -23,7 +23,8 @@ All of these must pass before a commit. CI runs them on Python 3.11 to 3.13.
    complete `target` and the previous value from the latest `settings.list`.
 3. Never retry a write automatically. After an error or timeout, read state again.
 4. Ignore retained MQTT command messages (they would replay old writes).
-5. Do not commit Jabra binaries, APKs, installers or firmware files. Analysis notes go into
+5. Do not commit Jabra binaries, APKs, installers or firmware files. Exception: the Jabra logo files in
+   `assets/brand/` (permission from Jabra, see THIRD_PARTY_NOTICES.md). Analysis notes go into
    `docs/` as text, with no vendor code pasted in.
 6. The jabridge socket is unauthenticated. Never expose it on a network.
 

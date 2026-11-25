@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="assets/banner.png" alt="ha-jabra: Jabra headsets in Home Assistant, via MQTT" width="100%">
+  <img src="assets/brand/logo.png" alt="Jabra" height="64">
+</p>
+
+<p align="center">
+  <img src="assets/banner.png" alt="ha-jabra: Jabra headsets in Home Assistant" width="100%">
 </p>
 
 <p align="center">
@@ -152,7 +156,8 @@ ruff check . && ruff format --check . && mypy && pytest
 
 Built on [jabridge](https://github.com/Watchdog0x/jabridge) by Watchdog0x (Apache-2.0). This is an
 independent community project, not affiliated with or endorsed by Jabra or GN Audio A/S. Jabra is a
-trademark of its owner. The logo is an original design. Use at your own risk; changing device
+trademark of GN Audio A/S; the Jabra logo in `assets/brand/` is used with permission and stays the
+property of GN Audio. The ha-jabra banner and icon are original designs. Use at your own risk; changing device
 settings can have effects you did not intend. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Licensed under the [Apache License 2.0](LICENSE).
