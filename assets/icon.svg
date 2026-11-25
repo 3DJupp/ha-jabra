@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10294a"/>
+      <stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff6b5e" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff6b5e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <!-- headband -->
+  <path d="M62 150 C62 56 194 56 194 150" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+  <!-- ear cups -->
+  <rect x="42" y="136" width="36" height="66" rx="15" fill="#ffffff"/>
+  <rect x="178" y="136" width="36" height="66" rx="15" fill="#ffffff"/>
+  <!-- house between the cups -->
+  <path d="M97 142 L128 112 L159 142 V182 Q159 188 153 188 H103 Q97 188 97 182 Z" fill="#2dd4bf"/>
+  <rect x="118" y="156" width="20" height="32" rx="4" fill="#10294a"/>
+  <!-- busylight -->
+  <circle cx="196" cy="128" r="22" fill="url(#glow)"/>
+  <circle cx="196" cy="128" r="9" fill="#ff5a4f" stroke="#ffffff" stroke-width="3"/>
+  <!-- boom microphone -->
+  <path d="M60 202 C60 228 90 236 112 228" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="117" cy="227" r="9" fill="#ffffff"/>
+</svg>

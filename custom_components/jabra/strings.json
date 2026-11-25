@@ -1,0 +1,53 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Choose a Jabra headset. It must be switched on and close to a Bluetooth adapter or proxy of Home Assistant.",
+        "data": {
+          "address": "Headset"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Set up {name}? Home Assistant will connect briefly from time to time to read the battery level."
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the headset. Close Jabra Sound+ on your phone, disconnect a Link dongle and try again."
+    },
+    "abort": {
+      "already_configured": "This headset is already set up.",
+      "already_in_progress": "A setup for a Jabra headset is already in progress.",
+      "cannot_connect": "Could not connect to the headset.",
+      "no_devices_found": "No Jabra headset is advertising right now.",
+      "not_supported": "This Jabra device does not provide a serial number over Bluetooth LE."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Polling interval (minutes)"
+        },
+        "data_description": {
+          "scan_interval": "Each update connects briefly to the headset. Shorter intervals can disturb other apps that use it."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "firmware": {
+        "name": "Firmware"
+      },
+      "hardware": {
+        "name": "Hardware revision"
+      }
+    }
+  },
+  "exceptions": {
+    "headset_unreachable": {
+      "message": "The headset is out of range, switched off or busy with another connection."
+    }
+  }
+}

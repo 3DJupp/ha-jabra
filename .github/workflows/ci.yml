@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - name: Install test dependencies
+        run: |
+          pip install -r requirements_test.txt
+          # Requirements of the bluetooth integrations the tests import.
+          python - <<'PY' > bt_requirements.txt
+          import json, pathlib, homeassistant
+          base = pathlib.Path(homeassistant.__file__).parent / "components"
+          for name in ("bluetooth", "bluetooth_adapters", "usb"):
+              print("\n".join(json.loads((base / name / "manifest.json").read_text()).get("requirements", [])))
+          PY
+          pip install -r bt_requirements.txt
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: mypy
+      - run: pytest --cov=custom_components.jabra --cov-report=term-missing
+
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
+
+  hacs:
+    # The HACS action only validates public repositories.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: integration
+          # Brand images ship in custom_components/jabra/brand (HA 2026.3+).
+          ignore: brands
