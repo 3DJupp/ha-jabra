@@ -56,8 +56,23 @@ Not found: any PIN or passkey property. Firmware update properties exist but sta
 Connected over BLE without bonding. Primary services: Generic Access `0x1800`, Generic Attribute
 `0x1801`, Device Information `0x180A`, Battery `0x180F` and `0xFEFF`. `0xFEFF` is the 16-bit member
 UUID assigned to GN Netcom (Jabra), so it is the candidate for GNP over BLE. Battery level is
-available through the standard Battery Service. Still to record: the characteristics of `0xFEFF`
-and their properties, and whether writes need bonding.
+available through the standard Battery Service (`0x2A19`, read + notify).
+
+Characteristics of `0xFEFF` (no bonding needed to see them):
+
+| Characteristic | Properties | Likely role |
+| --- | --- | --- |
+| `8b5b80c0-ac6d-11e4-baef-0002a5d5c51b` | indicate, read, write, write without response | GNP request/response channel |
+| `cacdf71a-fbe7-412b-91ec-045d2aeb7950` | indicate | second GNP channel or events |
+| `80405498-28ed-4022-924f-900acb30ff10` | notify | events |
+
+The first two UUIDs also appear as string constants in Sound+, which supports the GNP-over-BLE
+reading. Device Information (`0x180A`) offers serial, manufacturer, system id, firmware and hardware
+revision (read).
+
+Open: the exact GNP framing over BLE (jabridge's USB frame is `dst src seq flags|len class op
+payload` after the HID report id, host destination `0x08`, query flag `0x40`) and whether writes
+need bonding. First test is a read-only battery query (class `0x12`, op `0x02`).
 
 ### Earlier plan for the live check
 
