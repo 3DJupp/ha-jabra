@@ -19,5 +19,5 @@
   </g>
   <text x="520" y="290" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="800" font-size="130" fill="#ffffff">ha-jabra</text>
   <text x="524" y="365" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="500" font-size="42" fill="#a5e8f2">Jabra headsets in Home Assistant</text>
-  <text x="524" y="420" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="400" font-size="32" fill="#7fb6c4">Battery, busylight and settings via MQTT discovery</text>
+  <text x="524" y="420" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="400" font-size="32" fill="#7fb6c4">Battery and device info over Bluetooth LE</text>
 </svg>

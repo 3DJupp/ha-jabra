@@ -1,0 +1,53 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Wähle ein Jabra-Headset. Es muss eingeschaltet und in Reichweite eines Bluetooth-Adapters oder Proxys von Home Assistant sein.",
+        "data": {
+          "address": "Headset"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "{name} einrichten? Home Assistant verbindet sich ab und zu kurz, um den Akkustand zu lesen."
+      }
+    },
+    "error": {
+      "cannot_connect": "Keine Verbindung zum Headset. Jabra Sound+ auf dem Handy schließen, den Link-Dongle trennen und erneut versuchen."
+    },
+    "abort": {
+      "already_configured": "Dieses Headset ist bereits eingerichtet.",
+      "already_in_progress": "Es läuft bereits eine Einrichtung für ein Jabra-Headset.",
+      "cannot_connect": "Keine Verbindung zum Headset.",
+      "no_devices_found": "Gerade sendet kein Jabra-Headset.",
+      "not_supported": "Dieses Jabra-Gerät liefert über Bluetooth LE keine Seriennummer."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Abfrageintervall (Minuten)"
+        },
+        "data_description": {
+          "scan_interval": "Jede Abfrage verbindet sich kurz mit dem Headset. Kürzere Intervalle können andere Apps stören, die es nutzen."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "firmware": {
+        "name": "Firmware"
+      },
+      "hardware": {
+        "name": "Hardware-Revision"
+      }
+    }
+  },
+  "exceptions": {
+    "headset_unreachable": {
+      "message": "Das Headset ist außer Reichweite, ausgeschaltet oder anderweitig verbunden."
+    }
+  }
+}

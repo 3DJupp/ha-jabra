@@ -1,6 +1,6 @@
 # Protocol notes
 
-Findings for a native Home Assistant integration (no MQTT, no jabridge daemon). Text notes only; no
+Findings behind the Home Assistant integration in `custom_components/jabra`. Text notes only; no
 vendor code is copied into this repository.
 
 ## Sources

@@ -17,5 +17,5 @@
     <circle cx="117" cy="227" r="9" fill="#ffffff"/>
   </g>
   <text x="212" y="112" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="800" font-size="58" fill="#ffffff">ha-jabra</text>
-  <text x="214" y="148" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="500" font-size="22" fill="#a5e8f2">Jabra to MQTT</text>
+  <text x="214" y="148" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="500" font-size="22" fill="#a5e8f2">Jabra for Home Assistant</text>
 </svg>

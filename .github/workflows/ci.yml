@@ -11,41 +11,39 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.11", "3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.14"
           cache: pip
-      - run: pip install -e ".[dev]"
+      - name: Install test dependencies
+        run: |
+          pip install -r requirements_test.txt
+          # Requirements of the bluetooth integrations the tests import.
+          python - <<'PY' > bt_requirements.txt
+          import json, pathlib, homeassistant
+          base = pathlib.Path(homeassistant.__file__).parent / "components"
+          for name in ("bluetooth", "bluetooth_adapters", "usb"):
+              print("\n".join(json.loads((base / name / "manifest.json").read_text()).get("requirements", [])))
+          PY
+          pip install -r bt_requirements.txt
       - run: ruff check .
       - run: ruff format --check .
       - run: mypy
-      - run: pytest --cov=jabra2mqtt --cov-report=term-missing
+      - run: pytest --cov=custom_components.jabra --cov-report=term-missing
 
-  addon-lint:
+  hassfest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: frenck/action-addon-linter@v2
-        with:
-          path: ./jabra2mqtt
+      - uses: home-assistant/actions/hassfest@master
 
-  docker-build:
+  hacs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - uses: docker/build-push-action@v6
+      - uses: hacs/action@main
         with:
-          context: .
-          load: true
-          tags: ha-jabra:ci
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-      - name: Smoke test the image
-        run: docker run --rm --entrypoint sh ha-jabra:ci -c "command -v jabridge && python -c 'import jabra2mqtt; print(jabra2mqtt.__version__)'"
+          category: integration
+          # Brand images ship in custom_components/jabra/brand (HA 2026.3+).
+          ignore: brands

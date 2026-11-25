@@ -1,12 +1,17 @@
-# Status (updated 25.11.2026)
+# Status (updated 26.11.2026)
 
-The repository now contains the first implementation (phases 1 to 4 of the original plan, without
-hardware): `jabra2mqtt` bridge, tests against a fake jabridge and an in-process MQTT broker, add-on
-configuration, Docker image and CI. Correction to the research below: jabridge **does** expose the
-busylight through IPC (`device.busylight`, modes `auto`, `on`, `off`; only `auto` needs PipeWire).
-Open: everything that needs real hardware, rename and PIN, a firmware update trigger.
-The "first task for Claude Code" at the end of this file has been done; see `CLAUDE.md` for the
-current rules and `docs/HARDWARE_TESTING.md` for the next step.
+Direction changed: the owner did not want MQTT or an add-on. The project is now a HACS custom
+integration over **Bluetooth LE** (see `docs/PROTOCOL_NOTES.md`):
+
+* Done (0.2.0, not yet on hardware): discovery via the GN service `0xFEFF`, serial-number identity
+  despite rotating addresses, battery/firmware/hardware sensors from standard GATT, options,
+  diagnostics, Jabra brand images, prepared GNP codec.
+* Next: read-only GNP query over BLE (battery, class `0x12` op `0x02`) with nRF Connect to confirm
+  the framing; then read-only entities for name, ANC mode and busylight state.
+* Later: writes (busylight, rename, ANC) behind the safety rules in `CLAUDE.md`.
+* Out of scope: firmware updates (manual in Jabra Direct or Sound+), PIN (no such property found).
+
+The original German research below is kept for history. Its add-on and MQTT plan is superseded.
 
 ---
 
