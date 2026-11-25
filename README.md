@@ -12,6 +12,8 @@
   <img alt="Home Assistant" src="https://img.shields.io/badge/Home%20Assistant-2026.3%2B-blue">
   <img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-green">
   <img alt="Status" src="https://img.shields.io/badge/status-alpha-orange">
+  <a href="https://ko-fi.com/3djupp"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=ko-fi&logoColor=white"></a>
+  <a href="https://buymeacoffee.com/3djupp"><img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy%20me%20a%20coffee-support-FFDD00?logo=buymeacoffee&logoColor=black"></a>
 </p>
 
 # Jabra for Home Assistant
@@ -101,6 +103,15 @@ setup (a local adapter or an ESPHome Bluetooth proxy with active connections ena
       custom_components.jabra: debug
   ```
 * Diagnostics (serial number and address removed) can be downloaded from the device page.
+
+## Support the project
+
+This integration is a hobby project. If you like it, you can say thanks with a coffee:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/3djupp)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-3djupp-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/3djupp)
+
+Bug reports with diagnostics and debug logs help just as much.
 
 ## Development
 
